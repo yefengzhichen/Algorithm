@@ -7,13 +7,23 @@ import (
 func TestA(t *testing.T) {
 	tests := []struct {
 		name string
-		in   [][]int
+		in   int
 		out  int
 	}{
 		{
 			name: "1",
-			in:   [][]int{},
-			out:  0,
+			in:   1,
+			out:  1,
+		},
+		{
+			name: "2",
+			in:   3,
+			out:  3,
+		},
+		{
+			name: "3",
+			in:   4,
+			out:  5,
 		},
 	}
 	for i, test := range tests {
@@ -21,7 +31,7 @@ func TestA(t *testing.T) {
 			continue
 		}
 		t.Run(test.name, func(t *testing.T) {
-			res := maxAreaOfIsland(test.in)
+			res := countWays(test.in)
 			if res != test.out {
 				t.Errorf("res %d, want %d", res, test.out)
 			}

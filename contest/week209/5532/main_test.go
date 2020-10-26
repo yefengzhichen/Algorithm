@@ -7,13 +7,13 @@ import (
 func TestA(t *testing.T) {
 	tests := []struct {
 		name string
-		in   [][]int
-		out  int
+		in   *TreeNode
+		out  bool
 	}{
 		{
 			name: "1",
-			in:   [][]int{},
-			out:  0,
+			in:   &TreeNode{5, &TreeNode{9, &TreeNode{3, nil, nil}, &TreeNode{5, nil, nil}}, &TreeNode{1, &TreeNode{7, nil, nil}, nil}},
+			out:  false,
 		},
 	}
 	for i, test := range tests {
@@ -21,9 +21,9 @@ func TestA(t *testing.T) {
 			continue
 		}
 		t.Run(test.name, func(t *testing.T) {
-			res := maxAreaOfIsland(test.in)
+			res := isEvenOddTree(test.in)
 			if res != test.out {
-				t.Errorf("res %d, want %d", res, test.out)
+				t.Errorf("res %v, want %v", res, test.out)
 			}
 		})
 	}

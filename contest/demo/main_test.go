@@ -11,7 +11,7 @@ func TestA(t *testing.T) {
 		out  int
 	}{
 		{
-			name: "1",
+			name: "nil",
 			in:   [][]int{},
 			out:  0,
 		},

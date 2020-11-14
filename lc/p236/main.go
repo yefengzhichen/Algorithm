@@ -8,11 +8,8 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-type Elems struct {
-}
-
-func fourSum(nums []int, target int) [][]int {
-
+func maxAreaOfIsland(grid [][]int) int {
+	return 0
 }
 
 func main() {

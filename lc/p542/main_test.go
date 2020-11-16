@@ -8,20 +8,12 @@ func TestA(t *testing.T) {
 	tests := []struct {
 		name string
 		in   [][]int
-		k    int
 		out  int
 	}{
 		{
 			name: "1",
-			in:   [][]int{{1, 5, 9}, {10, 11, 13}, {12, 13, 15}},
-			k:    8,
-			out:  13,
-		},
-		{
-			name: "1",
-			in:   [][]int{{1, 2}, {1, 3}},
-			k:    3,
-			out:  2,
+			in:   [][]int{},
+			out:  0,
 		},
 	}
 	for i, test := range tests {
@@ -29,7 +21,7 @@ func TestA(t *testing.T) {
 			continue
 		}
 		t.Run(test.name, func(t *testing.T) {
-			res := kthSmallest(test.in, test.k)
+			res := maxAreaOfIsland(test.in)
 			if res != test.out {
 				t.Errorf("res %d, want %d", res, test.out)
 			}

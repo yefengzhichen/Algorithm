@@ -13,6 +13,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//这里的反转链表思路不太好，后面再做时需要换种方式来写
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	if head == nil {
 		return nil

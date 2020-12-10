@@ -7,13 +7,33 @@ import (
 func TestA(t *testing.T) {
 	tests := []struct {
 		name string
-		in   [][]int
-		out  int
+		inS  string
+		inT  string
+		out  string
 	}{
 		{
 			name: "1",
-			in:   [][]int{},
-			out:  0,
+			inS:  "ABANC",
+			inT:  "ABC",
+			out:  "BANC",
+		},
+		{
+			name: "1",
+			inS:  "BANCBA",
+			inT:  "ABC",
+			out:  "CBA",
+		},
+		{
+			name: "1",
+			inS:  "ABC",
+			inT:  "ABC",
+			out:  "ABC",
+		},
+		{
+			name: "1",
+			inS:  "A",
+			inT:  "AA",
+			out:  "",
 		},
 	}
 	for i, test := range tests {
@@ -21,9 +41,9 @@ func TestA(t *testing.T) {
 			continue
 		}
 		t.Run(test.name, func(t *testing.T) {
-			res := maxAreaOfIsland(test.in)
+			res := minWindow(test.inS, test.inT)
 			if res != test.out {
-				t.Errorf("res %d, want %d", res, test.out)
+				t.Errorf("res %s, want %s", res, test.out)
 			}
 		})
 	}
